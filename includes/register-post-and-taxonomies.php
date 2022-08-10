@@ -46,6 +46,9 @@ function tmph_register_post_type_and_taxonomy() {
     );
  
     register_post_type( 'team_members', $args );
+    
+    // Flush the rules
+    flush_rewrite_rules();
 
     // Register texonomy
     $labels = array(
