@@ -1,28 +1,32 @@
 <?php
-
 function tmph_register_post_type_and_taxonomy() {
+    // Settings array
+    $tms_settings_array = get_option('tms_setting_datas');
+    $tms_post_type_name = $tms_settings_array['tms_post_type_name'];
+    $tms_post_type_slug = $tms_settings_array['tms_post_type_slug'];
+
     // Register post type - team_members
     $labels = array(
-        'name'                  => _x( 'Team Members', 'Post type general name', 'textdomain' ),
-        'singular_name'         => _x( 'Team Member', 'Post type singular name', 'textdomain' ),
-        'menu_name'             => _x( 'Team Members', 'Admin Menu text', 'textdomain' ),
-        'name_admin_bar'        => _x( 'Team Member', 'Add New on Toolbar', 'textdomain' ),
+        'name'                  => _x( $tms_post_type_name . 's', 'Post type general name', 'textdomain' ),
+        'singular_name'         => _x( $tms_post_type_name, 'Post type singular name', 'textdomain' ),
+        'menu_name'             => _x( $tms_post_type_name . 's', 'Admin Menu text', 'textdomain' ),
+        'name_admin_bar'        => _x( $tms_post_type_name, 'Add New on Toolbar', 'textdomain' ),
         'add_new'               => __( 'Add New', 'textdomain' ),
-        'add_new_item'          => __( 'Add New Member', 'textdomain' ),
-        'new_item'              => __( 'New Member', 'textdomain' ),
-        'edit_item'             => __( 'Edit Member', 'textdomain' ),
-        'view_item'             => __( 'View Member', 'textdomain' ),
-        'all_items'             => __( 'All Members', 'textdomain' ),
-        'search_items'          => __( 'Search Members', 'textdomain' ),
-        'parent_item_colon'     => __( 'Parent Members:', 'textdomain' ),
-        'not_found'             => __( 'No member found.', 'textdomain' ),
-        'not_found_in_trash'    => __( 'No member found in Trash.', 'textdomain' ),
-        'archives'              => _x( 'Team Member archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
-        'featured_image'        => _x( 'Team Member Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
-        'set_featured_image'    => _x( 'Set Team Member', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
-        'remove_featured_image' => _x( 'Remove Team Member', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
-        'use_featured_image'    => _x( 'Use as Team Member', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
-        'archives'              => _x( 'Team Member archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
+        'add_new_item'          => __( 'Add New ' . $tms_post_type_name, 'textdomain' ),
+        'new_item'              => __( 'New ' . $tms_post_type_name, 'textdomain' ),
+        'edit_item'             => __( 'Edit ' . $tms_post_type_name, 'textdomain' ),
+        'view_item'             => __( 'View ' . $tms_post_type_name, 'textdomain' ),
+        'all_items'             => __( 'All ' . $tms_post_type_name, 'textdomain' ),
+        'search_items'          => __( 'Search ' . $tms_post_type_name, 'textdomain' ),
+        'parent_item_colon'     => __( 'Parent :' . $tms_post_type_name, 'textdomain' ),
+        'not_found'             => __( 'No ' . $tms_post_type_name . ' found.', 'textdomain' ),
+        'not_found_in_trash'    => __( 'No ' . $tms_post_type_name . ' found in Trash.', 'textdomain' ),
+        'archives'              => _x(  $tms_post_type_name . ' archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
+        'featured_image'        => _x( $tms_post_type_name . ' Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'set_featured_image'    => _x( 'Set ' . $tms_post_type_name, 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'remove_featured_image' => _x( 'Remove ' . $tms_post_type_name, 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'use_featured_image'    => _x( 'Use as ' . $tms_post_type_name, 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'archives'              => _x(  $tms_post_type_name . ' archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
     );
  
     $args = array(
@@ -33,7 +37,7 @@ function tmph_register_post_type_and_taxonomy() {
         'show_in_menu'       => true,
         'query_var'          => true,
         'menu_icon'          => 'dashicons-groups',
-        'rewrite'            => array( 'slug' => 'team_members' ),
+        'rewrite'            => array( 'slug' =>  $tms_post_type_slug ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
