@@ -11,7 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Show team members anywhere by the shortcode with 3 differents attributes.
+Show team members anywhere by the shortcode with 3 differents attributes. The shortcode receives three attributes member_count="3", img_position="top" and show_button="true" with two default attributes img_position="top" and show_button="true".
+
 
 == Installation ==
 

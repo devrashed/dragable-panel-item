@@ -1,6 +1,8 @@
 == Description ==
 
-Show team members anywhere by the **Shortcode** with **3 differents attributes**.
+Show team members anywhere by the **Shortcode** `[team_members]` with **3 differents attributes** `member_count="3"`, `img_position="top"` and `show_button="true"` with two default attributes `img_position="top"` and `show_button="true"`.
+
+
 
 == Installation ==
 

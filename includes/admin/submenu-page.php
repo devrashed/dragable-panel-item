@@ -55,7 +55,8 @@ if ( ! function_exists( 'tms_team_members_showcase_settings_callback' ) ) {
 				<div class="tms-admin-settings">
 					<form method="post" class="tms-admin-settings-form">
 					<h2 class="title"><?php _e('Customize your settings', 'team-members-showcase')?></h2>
-					<p><?php _e('Use the shortcode <kbd>[wc-product-table]</kbd> for displaying the Amazing Product Table with all of your products together. User can order products here easily without visiting individual product.', 'team-members-showcase')?></p>
+					<p><?php _e('Use the shortcode <kbd>[team_members]</kbd> for displaying the amazing team members easily anywhere. The shortcode receives three attributes <b>member_count="3"</b>, <b>img_position="top"</b> and <b>show_button="true"</b> with two default attributes <b>img_position="top"</b> and <b>show_button="true"</b>.', 'team-members-showcase')?></p>
+					<p><?php _e('You could change the <b>Custom Post Type Name</b> and <b>Custom Post Type Slug</b> anytime by inputting the value below.', 'team-members-showcase')?></p>
 					<table class="form-table table-design-form">
 						<tbody>
 							<tr>
